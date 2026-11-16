@@ -87,7 +87,8 @@ section h3 {
 }
 
 .participants-list {
-  margin-left: 19px;
+  margin-left: 0;
+  list-style: none;
   color: #4b5563;
   font-size: 0.9rem;
   overflow-wrap: anywhere;
@@ -97,8 +98,51 @@ section h3 {
   padding: 2px 0;
 }
 
-.participants-list li::marker {
-  color: #0066cc;
+.participants-list li:not(.participants-empty) {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.participant-email {
+  overflow-wrap: anywhere;
+}
+
+.remove-participant-button {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #9b2c2c;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.remove-participant-button:hover {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.remove-participant-button:focus-visible {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.remove-participant-button svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.8;
 }
 
 .participants-list .participants-empty {
